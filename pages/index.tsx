@@ -1,12 +1,14 @@
 import ActionCard from "../components/ActionCard";
-import BodyWrapper from "../components/BodyWrapper";
+import NowCardBody from "../components/NowCardBody";
 
 export default function Index(): JSX.Element {
   return (
-    <BodyWrapper>
-      <ActionCard />
-      <ActionCard />
-      <ActionCard />
-    </BodyWrapper>
+    <>
+      <ActionCard body={<NowCardBody />} href="/now" />
+      <ActionCard body={<NowCardBody />} href="#" />
+      <ActionCard body={<NowCardBody />} href="#  " />
+
+      {/* <ActionCard body={<LaterCardBody />} href="/later" /> */}
+    </>
   );
 }
