@@ -1,5 +1,6 @@
 import Head from "next/head";
 import BodyWrapper from "./BodyWrapper";
+import Footer from "./Footer";
 import Header from "./Header";
 
 type Props = {
@@ -18,6 +19,7 @@ export default function Layout({ children }: Props) {
         <div className="flex flex-1">
           <BodyWrapper>{children}</BodyWrapper>
         </div>
+        <Footer />
       </main>
     </div>
   );
