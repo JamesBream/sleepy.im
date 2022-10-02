@@ -5,7 +5,7 @@ const timeToFallAsleepMinutes = 15;
 const numberOfCycles = 6;
 const cycleMinutes = 90;
 
-export function sleepNowFull(
+export function fallAsleepAt(
   asleepAt: DateTime = DateTime.local()
 ): SleepCycle[] {
   // 1. Get the current time and add the time to fall asleep
@@ -23,6 +23,21 @@ export function sleepNowFull(
   });
 
   return cycles;
+}
+
+export function wakeUpAt(wakeUpAt: DateTime = DateTime.local()): SleepCycle[] {
+  const cycles = [...Array(numberOfCycles)].map((_, i) => {
+    const cycleCount = i + 1;
+    const time = wakeUpAt.minus({ minutes: cycleMinutes * cycleCount });
+
+    return {
+      count: cycleCount,
+      time,
+      duration: wakeUpAt.diff(time),
+    };
+  });
+
+  return cycles.reverse();
 }
 
 export interface SleepCycle {

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import BodyWrapper from "./BodyWrapper";
+import Footer from "./Footer";
 import Header from "./Header";
 
 type Props = {
@@ -13,11 +14,12 @@ export default function Layout({ children }: Props) {
         <title>I&apos;m Sleepy - Bedtime calculator</title>
       </Head>
 
-      <main className="flex min-h-screen flex-col items-center bg-slate-800 py-24 text-gray-200">
+      <main className="flex min-h-screen flex-col items-center bg-slate-800 py-5 text-gray-200 sm:py-24">
         <Header />
         <div className="flex flex-1">
           <BodyWrapper>{children}</BodyWrapper>
         </div>
+        <Footer />
       </main>
     </div>
   );
