@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import RightArrow from "./RightArrow";
 
-export default function WakeAtCardBody() {
-  const [hour, setHour] = useState("08");
+export default function SleepAtCardBody() {
+  const [hour, setHour] = useState("10");
   const [minute, setMinute] = useState("00");
-  const [ampm, setAmpm] = useState("AM");
+  const [ampm, setAmpm] = useState("PM");
 
   const router = useRouter();
 
@@ -21,12 +21,12 @@ export default function WakeAtCardBody() {
       hourInt = hourInt + 12;
     }
 
-    router.push("/wake-at?hour=" + hourInt + "&minute=" + minuteInt);
+    router.push("/sleep-at?hour=" + hourInt + "&minute=" + minuteInt);
   };
 
   return (
     <div className="flex items-center">
-      <span className="mr-4">I&apos;ll wake up at</span>
+      <span className="mr-4">I&apos;ll fall asleep at</span>
       <span className="pr-4 font-semibold">
         <div className="bnoworder-slate-400 inline-flex items-center rounded-md border p-1 text-lg shadow-sm">
           <select

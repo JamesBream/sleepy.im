@@ -9,10 +9,12 @@ export default function NowCardBody() {
       className="flex cursor-pointer items-center justify-between"
       onClick={() => router.push("/now")}
     >
-      <div className="flex-1">
+      <div className="flex-1 pr-3">
         I want to sleep <span className="font-semibold">now</span>
       </div>
-      <RightArrow />
+      <span>
+        <RightArrow />
+      </span>
     </div>
   );
 }
