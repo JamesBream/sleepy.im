@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import CycleTimeBlock from "../components/CycleTimeBlock";
 import { fallAsleepAt } from "../utils/sleep";
@@ -6,7 +7,11 @@ export default function Now() {
   const sleepNowData = fallAsleepAt();
 
   return (
-    <div className="flex h-full flex-col items-center">
+    <motion.div
+      className="flex h-full flex-col items-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="pb-5 text-lg font-light">
         If you go to sleep right now, you should try to wake up at one of the
         following times:
@@ -21,6 +26,6 @@ export default function Now() {
           <a>Go Back</a>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

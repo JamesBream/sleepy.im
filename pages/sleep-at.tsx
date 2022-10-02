@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import CycleTimeBlock from "../components/CycleTimeBlock";
@@ -16,7 +17,11 @@ export default function SleepAt() {
   const sleepNowData = fallAsleepAt(sleepAt);
 
   return (
-    <div className="flex h-full flex-col items-center">
+    <motion.div
+      className="flex h-full flex-col items-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="pb-5 text-lg font-light">
         If you fall asleep at {sleepAt.toLocaleString(DateTime.TIME_24_SIMPLE)},
         you should try to wake up at one of the following times:
@@ -31,6 +36,6 @@ export default function SleepAt() {
           <a>Go Back</a>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
