@@ -28,13 +28,13 @@ export default function SleepAtCardBody() {
     <div className="flex items-center">
       <span className="mr-4">I&apos;ll fall asleep at</span>
       <span className="pr-4 font-semibold">
-        <div className="bnoworder-slate-400 inline-flex items-center rounded-md border p-1 text-lg shadow-sm">
+        <div className="inline-flex items-center rounded-md border border-slate-100/20 bg-[#211F2D] p-1 text-lg shadow-sm">
           <select
             name=""
             id=""
             value={hour}
             onChange={(e) => setHour(e.target.value)}
-            className="appearance-none rounded-lg bg-transparent px-2 outline-none focus:bg-slate-400 focus:outline-hidden"
+            className="rounded-lg border-none bg-transparent bg-none px-2 outline-none focus:bg-slate-100/20 focus:ring-purple-500"
           >
             {Array.from(Array(12).keys()).map((i) => (
               <option key={i} value={(i + 1).toString().padStart(2, "0")}>
@@ -48,7 +48,7 @@ export default function SleepAtCardBody() {
             id=""
             value={minute}
             onChange={(e) => setMinute(e.target.value)}
-            className="appearance-none rounded-lg bg-transparent px-2 outline-none focus:bg-slate-400 focus:outline-hidden"
+            className="rounded-lg border-none bg-transparent bg-none px-2 outline-none focus:bg-slate-100/20 focus:ring-purple-500"
           >
             {Array.from(Array(12).keys()).map((i) => (
               <option key={i} value={(i * 5).toString().padStart(2, "0")}>
@@ -61,16 +61,19 @@ export default function SleepAtCardBody() {
             id=""
             value={ampm}
             onChange={(e) => setAmpm(e.target.value)}
-            className="appearance-none rounded-lg bg-transparent px-2 outline-none focus:bg-slate-400 focus:outline-hidden"
+            className="rounded-lg border-none bg-transparent bg-none px-2 outline-none focus:bg-slate-100/20 focus:ring-purple-500"
           >
             <option value="AM">AM</option>
             <option value="PM">PM</option>
           </select>
         </div>
       </span>
-      <span className="cursor-pointer" onClick={handleClick}>
+      <div
+        className="cursor-pointer rounded-full p-1 hover:bg-slate-200/20"
+        onClick={handleClick}
+      >
         <RightArrow />
-      </span>
+      </div>
     </div>
   );
 }

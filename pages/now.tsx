@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Button from "../components/Button";
 import CycleTimeBlock from "../components/CycleTimeBlock";
 import { fallAsleepAt } from "../utils/sleep";
 
@@ -21,9 +22,9 @@ export default function Now() {
           <CycleTimeBlock key={sleepCycle.count} cycle={sleepCycle} />
         ))}
       </div>
-      <div className="pt-5 font-medium underline">
+      <div className="pt-5 font-medium">
         <Link href="/">
-          <a>Go Back</a>
+          <Button>Go Back</Button>
         </Link>
       </div>
     </motion.div>

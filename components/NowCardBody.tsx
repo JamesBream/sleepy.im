@@ -12,9 +12,9 @@ export default function NowCardBody() {
       <div className="flex-1 pr-3">
         I want to sleep <span className="font-semibold">now</span>
       </div>
-      <span>
+      <div className="cursor-pointer rounded-full p-1 hover:bg-slate-200/20">
         <RightArrow />
-      </span>
+      </div>
     </div>
   );
 }

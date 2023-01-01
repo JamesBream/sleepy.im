@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import CycleTimeBlock from "../components/CycleTimeBlock";
 import { fallAsleepAt } from "../utils/sleep";
+import Button from "../components/Button";
 
 export default function SleepAt() {
   const router = useRouter();
@@ -31,9 +32,9 @@ export default function SleepAt() {
           <CycleTimeBlock key={sleepCycle.count} cycle={sleepCycle} />
         ))}
       </div>
-      <div className="pt-5 font-medium underline">
+      <div className="pt-5 font-medium">
         <Link href="/">
-          <a>Go Back</a>
+          <Button>Go Back</Button>
         </Link>
       </div>
     </motion.div>
