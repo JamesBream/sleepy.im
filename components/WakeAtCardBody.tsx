@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import IconButton from "./IconButton";
 import RightArrow from "./RightArrow";
 
 export default function WakeAtCardBody() {
@@ -68,12 +69,9 @@ export default function WakeAtCardBody() {
           </select>
         </div>
       </span>
-      <div
-        className="cursor-pointer rounded-full p-1 hover:bg-slate-200/20"
-        onClick={handleClick}
-      >
+      <IconButton onClick={handleClick} label={"Submit wake-up time"}>
         <RightArrow />
-      </div>
+      </IconButton>
     </div>
   );
 }
