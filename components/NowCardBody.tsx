@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import IconButton from "./IconButton";
-import RightArrow from "./RightArrow";
+import RightArrowIcon from "./icons/RightArrowIcon";
 
 export default function NowCardBody() {
   const router = useRouter();
@@ -15,7 +15,7 @@ export default function NowCardBody() {
         onClick={() => router.push("/now")}
         label={"Submit sleep now"}
       >
-        <RightArrow />
+        <RightArrowIcon />
       </IconButton>
     </div>
   );

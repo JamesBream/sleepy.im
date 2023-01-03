@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import CycleTimeBlock from "../components/CycleTimeBlock";
-import { fallAsleepAt } from "../utils/sleep";
+import { sleepAt } from "../utils/sleep";
 import Button from "../components/Button";
 
 export default function SleepAt() {
@@ -15,7 +15,7 @@ export default function SleepAt() {
     minute: parseInt((query.minute as string) || "0"),
   });
 
-  const sleepNowData = fallAsleepAt(sleepAt);
+  const sleepNowData = sleepAt(sleepAt);
 
   return (
     <motion.div

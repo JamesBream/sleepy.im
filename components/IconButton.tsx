@@ -7,7 +7,7 @@ type Props = {
 function IconButton({ children, onClick, label }: Props) {
   return (
     <button
-      className="rounded-full p-1 transition hover:bg-slate-200/20 focus:bg-slate-200/20"
+      className="rounded-full border border-slate-200/20 p-1 transition hover:bg-slate-200/20 focus:bg-slate-200/20 "
       onClick={onClick}
       aria-label={label}
     >

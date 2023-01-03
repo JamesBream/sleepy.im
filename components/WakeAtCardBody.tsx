@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import IconButton from "./IconButton";
-import RightArrow from "./RightArrow";
+import RightArrowIcon from "./icons/RightArrowIcon";
 
 export default function WakeAtCardBody() {
   const [hour, setHour] = useState("08");
@@ -70,7 +70,7 @@ export default function WakeAtCardBody() {
         </div>
       </span>
       <IconButton onClick={handleClick} label={"Submit wake-up time"}>
-        <RightArrow />
+        <RightArrowIcon />
       </IconButton>
     </div>
   );

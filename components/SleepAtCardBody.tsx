@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import IconButton from "./IconButton";
-import RightArrow from "./RightArrow";
+import RightArrowIcon from "./icons/RightArrowIcon";
 
 export default function SleepAtCardBody() {
   const [hour, setHour] = useState("10");
@@ -27,7 +27,7 @@ export default function SleepAtCardBody() {
 
   return (
     <div className="flex items-center">
-      <span className="mr-4">I&apos;ll fall asleep at</span>
+      <span className="mr-4">I&apos;ll sleep at</span>
       <span className="pr-4 font-semibold">
         <div className="inline-flex items-center rounded-md border border-slate-100/20 bg-[#211F2D] p-1 text-lg shadow-sm">
           <select
@@ -70,7 +70,7 @@ export default function SleepAtCardBody() {
         </div>
       </span>
       <IconButton onClick={handleClick} label={"Submit Sleep At Time"}>
-        <RightArrow />
+        <RightArrowIcon />
       </IconButton>
     </div>
   );
