@@ -33,10 +33,6 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#2b5797" />
         <meta name="theme-color" content="#ffffff" />
 
-        {/* Twitter Card Metadata */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@JamesWBream" />
-        <meta name="twitter:creator" content="@JamesWBream" />
         <meta name="twitter:title" content="I'm Sleepy - Bedtime Calculator" />
         <meta
           name="twitter:description"
@@ -46,6 +42,7 @@ export default function Document() {
           name="twitter:image"
           content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg"
         />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <body>
         <Main />
