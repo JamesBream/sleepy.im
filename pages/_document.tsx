@@ -44,7 +44,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://www.sleepy.im/summary-card.jpg"
+          content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg"
         />
       </Head>
       <body>
