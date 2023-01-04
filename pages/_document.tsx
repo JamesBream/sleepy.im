@@ -44,7 +44,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://sleepy.im/summary-card.jpg"
+          content="https://www.sleepy.im/summary-card.jpg"
         />
       </Head>
       <body>
