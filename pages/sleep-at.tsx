@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import CycleTimeBlock from "../components/CycleTimeBlock";
-import { fallAsleepAt } from "../utils/sleep";
+import { sleepAt } from "../utils/sleep";
+import Button from "../components/Button";
 
 export default function SleepAt() {
   const router = useRouter();
   const query = router.query;
 
-  const sleepAt = DateTime.local().set({
+  const time = DateTime.local().set({
     hour: parseInt((query.hour as string) || "0"),
     minute: parseInt((query.minute as string) || "0"),
   });
 
-  const sleepNowData = fallAsleepAt(sleepAt);
+  const sleepNowData = sleepAt(time);
 
   return (
     <motion.div
@@ -23,7 +24,7 @@ export default function SleepAt() {
       animate={{ opacity: 1 }}
     >
       <div className="pb-5 text-lg font-light">
-        If you fall asleep at {sleepAt.toLocaleString(DateTime.TIME_24_SIMPLE)},
+        If you fall asleep at {time.toLocaleString(DateTime.TIME_24_SIMPLE)},
         you should try to wake up at one of the following times:
       </div>
       <div className="flex flex-1 flex-col gap-2">
@@ -31,9 +32,9 @@ export default function SleepAt() {
           <CycleTimeBlock key={sleepCycle.count} cycle={sleepCycle} />
         ))}
       </div>
-      <div className="pt-5 font-medium underline">
+      <div className="pt-5 font-medium">
         <Link href="/">
-          <a>Go Back</a>
+          <Button>Go Back</Button>
         </Link>
       </div>
     </motion.div>

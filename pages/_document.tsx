@@ -1,12 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { useLocale } from "react-aria";
 
 export default function Document() {
   // Not sure this is needed, locale (and dir?) should get set automatically
-  const { locale, direction } = useLocale();
 
   return (
-    <Html lang={locale} dir={direction}>
+    <Html>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
@@ -34,6 +32,20 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#18224b" />
         <meta name="msapplication-TileColor" content="#2b5797" />
         <meta name="theme-color" content="#ffffff" />
+
+        {/* Twitter Card Metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@JamesWBream" />
+        <meta name="twitter:creator" content="@JamesWBream" />
+        <meta name="twitter:title" content="I'm Sleepy - Bedtime Calculator" />
+        <meta
+          name="twitter:description"
+          content="Find the perfect time to sleep or wake to help you feel rested and refreshed, every morning!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://sleepy.im/summary-card.jpg"
+        />
       </Head>
       <body>
         <Main />
